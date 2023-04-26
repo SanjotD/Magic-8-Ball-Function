@@ -8,11 +8,10 @@ function btnClicked() {
     .getElementById("questionInput")
     .value.toLowerCase();
   let answerOutput = document.getElementById("answer");
-
   let answer = checkQuestion(userQuestion);
   answerOutput.innerHTML = answer;
   if (answer === "") {
-    randomResponse();
+    answer = randomResponse();
     answerOutput.innerHTML = answer;
   }
 }
@@ -20,13 +19,13 @@ function btnClicked() {
 // Check Question Function
 function checkQuestion(question) {
   if (question === "") {
-    return (answer = "Please ask a question...");
+    return "Please ask a question...";
   } else if (question === "does a magic 8 ball actually work?") {
-    return (answer = "How dare you doubt me!");
+    return "How dare you doubt me!";
   } else if (question === "is javascript awesome?") {
-    return (answer = "Of Course!");
+    return "Of Course!";
   } else {
-    return (answer = "");
+    return "";
   }
 }
 
@@ -34,14 +33,14 @@ function checkQuestion(question) {
 function randomResponse() {
   let randNum = Math.random();
   if (randNum < 0.2) {
-    return (answer = "Without a Doubt.");
+    return "Without a Doubt.";
   } else if (randNum < 0.4) {
-    return (answer = "As I see it, yes");
+    return "As I see it, yes";
   } else if (randNum < 0.6) {
-    return (answer = "Concentrate and ask again.");
+    return "Concentrate and ask again.";
   } else if (randNum < 0.8) {
-    return (answer = "Don't count on it.");
+    return "Don't count on it.";
   } else {
-    return (answer = "Outlook not so good.");
+    return "Outlook not so good.";
   }
 }
